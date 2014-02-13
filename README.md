@@ -22,6 +22,8 @@ Watch
 gulp watch
 ```
 
+Works with the Chrome livereload extension (https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
+
 ## LICENSE
 
 (MIT License)
