@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var jade = require('gulp-jade');
 var livereload = require('gulp-livereload');
-// var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
 var stylus = require('gulp-stylus');
 var browserify = require('gulp-browserify');
