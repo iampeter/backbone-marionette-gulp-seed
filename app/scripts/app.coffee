@@ -8,8 +8,8 @@ class App extends Backbone.Marionette.Application
     )
 
     @addInitializer( (options) =>
-      AppLayout = require './views/AppLayout'
-      @layout = new AppLayout()
+      AppView = require './views/AppView'
+      @layout = new AppView()
       @layout.render()
     )
 
