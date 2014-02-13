@@ -6,15 +6,21 @@ This is a sample Todos seed application using Backbone.js, Marionette.js, Twitte
 
 Install
 
-  npm install
+```
+npm install
+```
 
 Build
 
-  gulp
+```
+gulp
+```
 
 Watch
 
-  gulp watch
+```
+gulp watch
+```
 
 ## LICENSE
 
