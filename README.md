@@ -2,6 +2,10 @@
 
 This is a sample Todos seed application using Backbone.js, Marionette.js, Twitter Bootstrap 3, Stylus, Jade and Coffeescript all bundled with Gulp.js
 
+## Demo
+
+http://iampeter.github.io/backbone-marionette-gulp-seed-demo/
+
 ## Usage
 
 Install
