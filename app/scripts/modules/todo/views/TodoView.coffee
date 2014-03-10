@@ -12,11 +12,17 @@ module.exports = class TodoView extends Backbone.Marionette.ItemView
     'click @ui.text': 'toggleCheck'
     'click @ui.close': 'removeTodo'
 
+  initialize: (options) ->
+    @vent = options.vent
+
   modelEvents:
     'change:done': 'render'
 
   toggleCheck: ->
     @model.set('done', !@model.get('done'))
+    @vent.trigger 'new:notification', "Toggled todo: " + @model.get('text')
 
   removeTodo: ->
     @model.destroy()
+    @vent.trigger 'new:notification', "Removed todo: " + @model.get('text')
+

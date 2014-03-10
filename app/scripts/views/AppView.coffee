@@ -1,28 +1,15 @@
-Todo = require('../models/Todo')
-Todos = require('../collections/Todos')
-
-module.exports = class AppView extends Backbone.Marionette.CompositeView
+module.exports = class AppView extends Marionette.Layout
   template: require './templates/app'
   el: "#app"
-  itemViewContainer: "#todo-list"
-  itemView: require('./TodoView')
 
   ui:
-    form: 'form#new-todo'
+    notificationsOn: '#notifications-on'
 
   events:
-    "submit @ui.form": "addTodo"
+    "click @ui.notificationsOn": 'notificationsOn'
 
   initialize: (options) ->
-    @collection = new Todos([
-      { text: "Wash dishes", done: false }
-      { text: "Learn Marionette.js", done: true }
-    ])
+    @app = options.app
 
-  addTodo: (e) ->
-    e.preventDefault()
-
-    data = Backbone.Syphon.serialize(@)
-    @collection.add(new Todo({ text: data.todo }))
-
-    @render()
+  notificationsOn: ->
+    @app.submodules.Notification.start({ region: @app.getRegion('notificationRegion') })

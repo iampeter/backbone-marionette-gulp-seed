@@ -1,0 +1,14 @@
+.panel.panel-default
+  .panel-heading
+    | Todo list
+    button.close &times;
+      = action
+
+  .panel-body
+    #todo-list.list-group
+
+    form#new-todo
+      input.form-control(type="text", name="todo", placeholder="enter a new todo and press ENTER", autofocus)
+
+.footer
+  a.btn.btn-primary(href="https://github.com/iampeter/backbone-marionette-gulp-seed", target='_blank') View on Github

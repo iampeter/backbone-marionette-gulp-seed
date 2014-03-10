@@ -43,7 +43,7 @@ gulp.task('vendor-scripts', function() {
     ])
     .pipe(plumber())
     .pipe(concat("vendor.js"))
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest(paths.dest + 'js/'))
 });
 

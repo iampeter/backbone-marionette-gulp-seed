@@ -1,17 +1,33 @@
+ToggleableRegion = require './regions/ToggleableRegion'
+AppView = require './views/AppView'
+TodoModule = require('./modules/todo/TodoModule')
+NotificationModule = require('./modules/notification/NotificationModule')
+
 class App extends Backbone.Marionette.Application
   initialize: =>
     console.log 'Initializing app...'
 
-    @on("initialize:after", (options) =>
-      Backbone.history.start();
-      Object.freeze? @
+    @addInitializer( (options) =>
+      (new AppView(app: @)).render()
     )
 
     @addInitializer( (options) =>
-      AppView = require './views/AppView'
-      @layout = new AppView()
-      @layout.render()
+      @addRegions({ 
+        notificationRegion: { 
+          selector: "#notifications"
+          regionType: ToggleableRegion
+          module: @submodules.Notification
+        }
+        todoRegion: { 
+          selector: "#todos"
+          regionType: ToggleableRegion
+          module: @submodules.Todo
+        }
+      })
     )
+
+    @module('Notification', NotificationModule)
+    @module('Todo', TodoModule)
 
     @start()
 
