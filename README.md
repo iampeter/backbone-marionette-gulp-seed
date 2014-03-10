@@ -6,6 +6,11 @@ This is a sample Todos seed application using Backbone.js, Marionette.js, Twitte
 
 http://iampeter.github.io/backbone-marionette-gulp-seed-demo/
 
+## Features
+
+- Custom Region with empty view
+- Startable / stoppable Modules, communicating with each other
+
 ## Usage
 
 Install
