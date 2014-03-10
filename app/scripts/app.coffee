@@ -8,7 +8,7 @@ class App extends Backbone.Marionette.Application
     console.log 'Initializing app...'
 
     @addInitializer( (options) =>
-      (new AppView(app: @)).render()
+      (new AppView()).render()
     )
 
     @addInitializer( (options) =>
