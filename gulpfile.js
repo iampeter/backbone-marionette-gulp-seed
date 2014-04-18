@@ -51,6 +51,7 @@ gulp.task('scripts', function() {
   gulp.src(paths.src + 'scripts/index.coffee', { read: false })
     .pipe(plumber())
     .pipe(browserify({
+      debug: true,
       transform: ['coffeeify', 'jadeify'],
       extensions: ['.coffee', '.jade']
     }))
