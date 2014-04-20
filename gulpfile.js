@@ -118,4 +118,4 @@ gulp.task('vendor', ['vendor-styles', 'vendor-scripts']);
 gulp.task('compile', ['html', 'styles', 'scripts']);
 
 gulp.task('default', ['assets', 'vendor', 'compile']);
-gulp.task('production', ['set-production', 'assets', 'vendor', 'compile']);
+gulp.task('production', ['set-production', 'default']);
