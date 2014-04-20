@@ -31,6 +31,12 @@ Watch
 gulp watch
 ```
 
+Build for production
+
+```
+gulp production
+```
+
 Works with the Chrome livereload extension (https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
 
 ## LICENSE
