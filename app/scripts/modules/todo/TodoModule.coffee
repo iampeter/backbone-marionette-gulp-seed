@@ -26,5 +26,4 @@ module.exports = class TodoModule extends BaseModule
     console.log 'Stopping TodoModule'
 
   showTodo: (text) ->
-    _.each @collection.where(text: text), (todo) ->
-      todo.toggleActive()
+    @collection.showTodo(text)
