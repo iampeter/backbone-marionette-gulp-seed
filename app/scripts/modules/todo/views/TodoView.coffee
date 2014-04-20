@@ -1,15 +1,14 @@
 module.exports = class TodoView extends Backbone.Marionette.ItemView
   template: require './templates/todo'
-  className: 'list-group-item'
+  className: ->
+    'list-group-item' + if @model.get('active') then ' active' else ''
 
   ui:
     check: '.check'
     close: '.close'
-    text: '.text'
 
   events:
     'click @ui.check': 'toggleCheck'
-    'click @ui.text': 'toggleCheck'
     'click @ui.close': 'removeTodo'
 
   initialize: (options) ->
@@ -17,6 +16,11 @@ module.exports = class TodoView extends Backbone.Marionette.ItemView
 
   modelEvents:
     'change:done': 'render'
+    'change:active': 'todoToggled'
+
+  todoToggled: ->
+    @$el.toggleClass('active')
+    @vent.trigger 'new:notification', "Selected/unselected todo: " + @model.get('text')
 
   toggleCheck: ->
     @model.set('done', !@model.get('done'))

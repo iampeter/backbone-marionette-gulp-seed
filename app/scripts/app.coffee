@@ -7,6 +7,8 @@ class App extends Backbone.Marionette.Application
   initialize: =>
     console.log 'Initializing app...'
 
+    @router = new Backbone.Marionette.AppRouter()
+
     @addInitializer( (options) =>
       (new AppView()).render()
     )
@@ -24,6 +26,10 @@ class App extends Backbone.Marionette.Application
           module: @submodules.Todo
         }
       })
+    )
+
+    @addInitializer( (options) =>
+      Backbone.history.start()
     )
 
     @module('Notification', NotificationModule)

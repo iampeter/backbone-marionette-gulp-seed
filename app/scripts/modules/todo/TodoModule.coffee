@@ -1,3 +1,4 @@
+Todos = require './collections/Todos'
 BaseModule = require '../BaseModule'
 
 module.exports = class TodoModule extends BaseModule
@@ -7,6 +8,15 @@ module.exports = class TodoModule extends BaseModule
     console.log 'Initializing TodoModule'
     @startWithParent = true
 
+    @collection = new Todos([
+      { text: "Wash dishes", done: false }
+      { text: "Learn Marionette.js", done: true }
+    ])
+
+    @app.router.processAppRoutes @, {
+      'todo/:text': 'showTodo'
+    }
+
   onStart: ->
     super()
     console.log 'Starting TodoModule'
@@ -14,3 +24,7 @@ module.exports = class TodoModule extends BaseModule
   onStop: ->
     super()
     console.log 'Stopping TodoModule'
+
+  showTodo: (text) ->
+    _.each @collection.where(text: text), (todo) ->
+      todo.toggleActive()

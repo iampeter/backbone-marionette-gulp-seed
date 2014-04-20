@@ -2,5 +2,5 @@ if done
   .check.fa.fa-check-square-o.fa-fw
 else
   .check.fa.fa-square-o.fa-fw
-span.text(class=done?' checked':'')= text
+a.text(href='#todo/'+text, class=done?' checked':'')= text
 span.close &times;

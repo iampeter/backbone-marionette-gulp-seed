@@ -19,11 +19,6 @@ module.exports = class MainView extends Backbone.Marionette.CompositeView
   initialize: (options) ->
     @vent = options.vent
 
-    @collection = new Todos([
-      { text: "Wash dishes", done: false }
-      { text: "Learn Marionette.js", done: true }
-    ])
-
   itemViewOptions: ->
     vent: @vent
 
