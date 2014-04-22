@@ -10,6 +10,8 @@ http://iampeter.github.io/backbone-marionette-gulp-seed-demo/
 
 - Custom Region with empty view
 - Startable / stoppable Modules, communicating with each other
+- Routes enclosed within / handled from modules
+- Separate production / development builds
 
 ## Usage
 
