@@ -5,7 +5,7 @@
   "description": "A seed project using Backbone.js, Marionette.js, Twitter Bootstrap 3, Stylus, Jade and Coffeescript all bundled with Gulp.js",
   "repository": "git@github.com:iampeter/backbone-marionette-gulp-seed.git",
   "devDependencies": {
-    "gulp": "~3.5.2",
+    "gulp": "~3.8.6",
     "gulp-jade": "~0.4.1",
     "gulp-livereload": "~1.1.1",
     "gulp-plumber": "~0.5.6",
