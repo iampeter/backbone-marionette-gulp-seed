@@ -1,3 +1,9 @@
+Marionette.Behaviors.behaviorsLookup = ->
+  window.Behaviors
+
+window.Behaviors = {}
+window.Behaviors.Closeable = require './behaviors/Closeable'
+
 ToggleableRegion = require './regions/ToggleableRegion'
 AppView = require './views/AppView'
 TodoModule = require('./modules/todo/TodoModule')
@@ -17,12 +23,12 @@ class App extends Backbone.Marionette.Application
       @addRegions({ 
         notificationRegion: { 
           selector: "#notifications"
-          regionType: ToggleableRegion
+          regionClass: ToggleableRegion
           module: @submodules.Notification
         }
         todoRegion: { 
           selector: "#todos"
-          regionType: ToggleableRegion
+          regionClass: ToggleableRegion
           module: @submodules.Todo
         }
       })

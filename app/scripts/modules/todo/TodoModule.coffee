@@ -22,7 +22,6 @@ module.exports = class TodoModule extends BaseModule
     console.log 'Starting TodoModule'
 
   onStop: ->
-    super()
     console.log 'Stopping TodoModule'
 
   showTodo: (text) ->

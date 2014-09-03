@@ -1,4 +1,4 @@
-App = require('./app')
+window.App = require('./app')
 
 $ ->
   App.initialize()

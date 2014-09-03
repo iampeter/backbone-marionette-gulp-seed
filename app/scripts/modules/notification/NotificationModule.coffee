@@ -12,5 +12,4 @@ module.exports = class NotificationModule extends BaseModule
     console.log 'Starting NotificationModule'
 
   onStop: ->
-    super()
     console.log 'Stopping NotificationModule'

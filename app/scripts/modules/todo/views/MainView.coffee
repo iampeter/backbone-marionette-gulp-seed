@@ -3,24 +3,18 @@ Todos = require('../collections/Todos')
 
 module.exports = class MainView extends Backbone.Marionette.CompositeView
   template: require './templates/main'
-  itemViewContainer: "#todo-list"
-  itemView: require('./TodoView')
+  childViewContainer: "#todo-list"
+  childView: require('./TodoView')
+
+  behaviors:
+    Closeable: {}
 
   ui:
     form: 'form#new-todo'
-    close: 'button.close'
-
-  triggers:
-    'click @ui.close': 'stop:notification:module'
+    input: 'form#new-todo input'
 
   events:
     "submit @ui.form": "addTodo"
-
-  initialize: (options) ->
-    @vent = options.vent
-
-  itemViewOptions: ->
-    vent: @vent
 
   addTodo: (e) ->
     e.preventDefault()
@@ -29,4 +23,7 @@ module.exports = class MainView extends Backbone.Marionette.CompositeView
     @collection.add(new Todo({ text: data.todo }))
 
     @render()
-    @vent.trigger 'new:notification', "Added todo: " + data.todo
+    App.vent.trigger 'new:notification', "Added todo: " + data.todo
+
+  onRender: ->
+    @ui.input.focus()
