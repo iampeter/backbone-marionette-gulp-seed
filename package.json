@@ -1,6 +1,6 @@
 {
   "name": "backbone-marionette-gulp-seed",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Piotr Godek",
   "description": "A seed project using Backbone.js, Marionette.js, Twitter Bootstrap 3, Stylus, Jade and Coffeescript all bundled with Gulp.js",
   "repository": "git@github.com:iampeter/backbone-marionette-gulp-seed.git",

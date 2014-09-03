@@ -12,6 +12,7 @@ http://iampeter.github.io/backbone-marionette-gulp-seed-demo/
 - Startable / stoppable Modules, communicating with each other
 - Routes enclosed within / handled from modules
 - Separate production / development builds
+- Behaviors
 
 ## Usage
 
